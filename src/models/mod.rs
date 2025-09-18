@@ -1,7 +1,6 @@
 use chrono::{DateTime, Utc, NaiveDateTime};
 use serde::{Deserialize, Serialize};
 use sqlx::FromRow;
-use rust_decimal::Decimal;
 
 // Custom type for SQLite datetime handling
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -53,6 +52,7 @@ pub struct Cart {
     pub items: Vec<CartItem>,
 }
 
+#[allow(dead_code)]
 impl Cart {
     pub fn new() -> Self {
         Self { items: Vec::new() }
@@ -97,7 +97,7 @@ impl Cart {
 
 #[derive(Debug, Clone, Serialize, Deserialize, FromRow)]
 pub struct Order {
-    pub id: i32,
+    pub id: i64,
     pub total_amount: f64,
     pub status: String,
     pub customer_name: String,

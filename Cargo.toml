@@ -1,7 +1,12 @@
+[[bin]]
+name = "seed"
+path = "src/bin/seed.rs"
+
 [package]
 name = "actx_shop"
 version = "0.1.0"
 edition = "2024"
+default-run = "actx_shop"
 
 [dependencies]
 actix-web = "4.5"

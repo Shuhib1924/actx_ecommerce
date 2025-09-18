@@ -1,7 +1,7 @@
 use actix_web::{error::ResponseError, http::StatusCode, HttpResponse};
-use std::fmt;
 
 #[derive(Debug, thiserror::Error)]
+#[allow(dead_code)]
 pub enum AppError {
     #[error("Database error: {0}")]
     DatabaseError(#[from] sqlx::Error),
